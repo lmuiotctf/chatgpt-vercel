@@ -37,7 +37,6 @@ export const config = {
 export const localKey = process.env.OPENAI_API_KEY || ""
 
 export const baseURL = process.env.OPENAI_API_BASE_URL
-console.log(baseURL+"pppp")
 // + 作用是将字符串转换为数字
 const timeout = isNaN(+process.env.TIMEOUT!)
   ? defaultEnv.TIMEOUT
