@@ -36,8 +36,12 @@ export const config = {
 
 export const localKey = process.env.OPENAI_API_KEY || ""
 
-export const baseURL = process.env.OPENAI_API_BASE_URL
-// + 作用是将字符串转换为数字
+process.env.NOGFW
+  ? defaultEnv.OPENAI_API_BASE_URL
+  : (process.env.OPENAI_API_BASE_URL || defaultEnv.OPENAI_API_BASE_URL).replace(
+      /^https?:\/\//,
+      ""
+    )// + 作用是将字符串转换为数字
 const timeout = isNaN(+process.env.TIMEOUT!)
   ? defaultEnv.TIMEOUT
   : +process.env.TIMEOUT!
