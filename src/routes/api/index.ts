@@ -92,7 +92,7 @@ export async function POST({ request }: APIEvent) {
     const decoder = new TextDecoder()
     
     const rawRes = await fetchWithTimeout(
-      `https://${baseURL}/v1/chat/completions`,
+      `https://ng.wxredcover.cn/v1/chat/completions`,
       {
         headers: {
           "Content-Type": "application/json",
